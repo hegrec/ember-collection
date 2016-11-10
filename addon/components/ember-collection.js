@@ -72,6 +72,9 @@ export default Ember.Component.extend({
 
     this.updateItems();
     this.updateScrollPosition();
+
+    this.updateCells();
+    this.updateContentSize();
   },
 
   updateItems(){
@@ -126,11 +129,6 @@ export default Ember.Component.extend({
         contentSize.height !== this._contentSize.height) {
       this.set('_contentSize', contentSize);
     }
-  },
-
-  willRender: function() {
-    this.updateCells();
-    this.updateContentSize();
   },
 
   updateCells() {
